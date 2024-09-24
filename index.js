@@ -28,17 +28,11 @@ function clearing() {
 function deleting() {
   screen.splice(pointer.index, 1);
   if (pointer.index > 0) {
+    screen.splice(pointer.index - 1, 1);
     pointer.index--;
-    screen.splice(pointer.index, 1);
-  } else if (pointer.index == 0) {
-    console.log("i = " + pointer.index);
-    return;
-  } else {
-    screen.splice(pointer.index, 1);
   }
 
   console.log("i = " + pointer.index);
-
   return displayScreen();
 }
 
@@ -46,12 +40,12 @@ function moveCursorBackward() {
   if (pointer.index == 0) {
     screen.splice(pointer.index, 1);
     pointer.index = screen.length;
-    console.log("i = " + pointer.index);
   } else {
     screen.splice(pointer.index, 1);
     pointer.index--;
-    console.log("i = " + pointer.index);
   }
+
+  console.log("i = " + pointer.index);
   return displayScreen();
 }
 
@@ -59,12 +53,12 @@ function moveCursorForward() {
   if (pointer.index == screen.length - 1) {
     screen.splice(pointer.index, 1);
     pointer.index = 0;
-    console.log("i = " + pointer.index);
   } else {
     screen.splice(pointer.index, 1);
     pointer.index++;
-    console.log("i = " + pointer.index);
   }
+
+  console.log("i = " + pointer.index);
   return displayScreen();
 }
 
