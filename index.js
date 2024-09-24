@@ -29,12 +29,16 @@ function deleting() {
   screen.splice(pointer.index, 1);
   if (pointer.index > 0) {
     pointer.index--;
+    screen.splice(pointer.index, 1);
   } else if (pointer.index == 0) {
+    console.log("i = " + pointer.index);
     return;
   } else {
     screen.splice(pointer.index, 1);
-    console.log("i = " + pointer.index);
   }
+
+  console.log("i = " + pointer.index);
+
   return displayScreen();
 }
 
