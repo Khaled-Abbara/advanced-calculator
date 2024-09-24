@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="index.css" />
+    <title>Calc</title>
+  </head>
+  <body>
+    <section class="screen-section">
+      <div id="screen"></div>
+    </section>
+    <section class="numbers-section">
+      <button onclick="inputNumber(1)">1</button>
+      <button onclick="inputNumber(2)">2</button>
+      <button onclick="inputNumber(3)">3</button>
+      <button onclick="inputNumber(4)">4</button>
+      <button onclick="inputNumber(5)">5</button>
+      <button onclick="inputNumber(6)">6</button>
+      <button onclick="inputNumber(7)">7</button>
+      <button onclick="inputNumber(8)">8</button>
+      <button onclick="inputNumber(9)">9</button>
+    </section>
+    <section class="basic-operation-section">
+      <button onclick="moveCursorBackward()">&lt;</button>
+      <button onclick="moveCursorForward()">&gt;</button>
+      <button onclick="clearing()">C</button>
+      <button onclick="deleting()">⌫</button>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>

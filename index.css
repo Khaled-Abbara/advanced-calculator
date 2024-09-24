@@ -1,0 +1,10 @@
+.numbers-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#screen {
+  height: 5rem;
+  font-size: 3rem;
+  padding: 1rem;
+}
