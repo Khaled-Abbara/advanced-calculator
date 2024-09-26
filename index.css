@@ -1,10 +1,23 @@
+button {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
 .numbers-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 1rem;
 }
 
 #screen {
-  height: 5rem;
+  height: 3rem;
   font-size: 3rem;
   padding: 1rem;
+}
+
+#answer {
+  text-align: right;
+  height: 3rem;
+  font-size: 3rem;
+  padding: 1rem 3rem 1rem 1rem;
 }
