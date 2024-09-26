@@ -10,23 +10,39 @@
   <body>
     <section class="screen-section">
       <div id="screen"></div>
+      <div id="answer"></div>
     </section>
     <section class="numbers-section">
-      <button onclick="inputNumber(1)">1</button>
-      <button onclick="inputNumber(2)">2</button>
-      <button onclick="inputNumber(3)">3</button>
-      <button onclick="inputNumber(4)">4</button>
-      <button onclick="inputNumber(5)">5</button>
-      <button onclick="inputNumber(6)">6</button>
-      <button onclick="inputNumber(7)">7</button>
-      <button onclick="inputNumber(8)">8</button>
-      <button onclick="inputNumber(9)">9</button>
+      <button onclick="inputValue('7')">7</button>
+      <button onclick="inputValue('8')">8</button>
+      <button onclick="inputValue('9')">9</button>
+
+      <button onclick="inputValue('4')">4</button>
+      <button onclick="inputValue('5')">5</button>
+      <button onclick="inputValue('6')">6</button>
+
+      <button onclick="inputValue('1')">1</button>
+      <button onclick="inputValue('2')">2</button>
+      <button onclick="inputValue('3')">3</button>
+
+      <button onclick="inputValue('0')">0</button>
+      <button onclick="inputValue('.')">.</button>
+      <button onclick="inputVariable('V')">VAR</button>
     </section>
     <section class="basic-operation-section">
+      <button onclick="storing()">STO</button>
+      <button onclick="emptyVariable()">MT</button>
       <button onclick="moveCursorBackward()">&lt;</button>
       <button onclick="moveCursorForward()">&gt;</button>
-      <button onclick="clearing()">C</button>
-      <button onclick="deleting()">⌫</button>
+      <button onclick="clearing()">AC</button>
+      <button onclick="deleting()">DEL</button>
+    </section>
+    <section class="basic-operators-section">
+      <button onclick="inputValue('+')">&plus;</button>
+      <button onclick="inputValue('-')">&minus;</button>
+      <button onclick="inputValue('*')">&times;</button>
+      <button onclick="inputValue('/')">&divide;</button>
+      <button onclick="excuteCalculation()">&equals;</button>
     </section>
     <script src="index.js"></script>
   </body>
