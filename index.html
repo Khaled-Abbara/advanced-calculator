@@ -38,11 +38,21 @@
       <button onclick="deleting()">DEL</button>
     </section>
     <section class="basic-operators-section">
+      <button onclick="inputValue('&#40;')">&#40;</button>
+      <button onclick="inputValue('&#41;')">&#41;</button>
       <button onclick="inputValue('+')">&plus;</button>
       <button onclick="inputValue('-')">&minus;</button>
       <button onclick="inputValue('*')">&times;</button>
       <button onclick="inputValue('/')">&divide;</button>
-      <button onclick="excuteCalculation()">&equals;</button>
+      <button onclick="executeCalculation()">&equals;</button>
+    </section>
+    <section class="function-group-section">
+      <button onclick="inputPythagoreanTheorem()">PYT</button>
+    </section>
+    <section>
+      <button onclick="inputVariable('ANS')">ANS</button>
+
+      <button onclick="inputValue('&#44;')">&#44;</button>
     </section>
     <script src="index.js"></script>
   </body>
