@@ -179,3 +179,72 @@ function executeCalculation() {
     answerContent.innerHTML = expression;
   }
 }
+
+// function mergeNumbers(array) {
+//   let mergedNumber;
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (typeof array[i] === "number") {
+//       // Check for consecutive numbers
+//       while (i + 1 < array.length && typeof array[i + 1] === "number") {
+//         mergedNumber += array[i + 1]; // Add the next number
+//         i++; // Move to the next index
+//       }
+//     }
+//   }
+
+//   console.log(mergedNumber);
+// }
+
+//   let tokens = expression.split(/([\+\-\*\/])/);
+
+//   for (let i = 0; i < expression.length; i++) {
+//     for (let j = 0; j < operators.length; j++) {
+//       if (expression[i] === operators[j]) {
+//         if (operators[j] === expression[i + 1]) {
+//           mergedElement = expression[i] + expression[i + 1];
+//           expression.splice(i, 2);
+//           expression.splice(i, 0, mergedElement);
+//         }
+//       }
+//     }
+
+// ---------------------------------------------
+
+// I used a b and c just like how it's done in math
+function inputPythagoreanTheorem() {
+  isPYT = true;
+  screen = [];
+
+  screen.splice(pointer.index, 1);
+  screen.splice(pointer.index, 0, "PYT → ");
+  pointer.index++;
+
+  console.log("i = " + pointer.index);
+  return displayScreen();
+
+  // let functionScreen = screen;
+  // functionScreen = [];
+  // functionScreen = functionScreen.join("");
+  // screenContent.innerHTML = functionScreen;
+}
+
+function executePythagoreanTheorem() {
+  isPYT = false;
+  let values = screen;
+
+  values.shift();
+  values = values.join("");
+  values = values.split(",");
+
+  if (values.length > 2) {
+    return alert("Error; Only put two values");
+  }
+
+  for (let i = 0; i < values.length; i++) {
+    values[i] = parseFloat(values[i]);
+  }
+
+  answer = Math.sqrt(Math.pow(values[0], 2) + Math.pow(values[1], 2));
+  answerContent.innerHTML = answer;
+}
