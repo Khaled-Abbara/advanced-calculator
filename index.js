@@ -1,15 +1,18 @@
 let screen = [];
 let answer = "";
-
-let storedVariable = 0;
+let screenContent = document.getElementById("screen");
+let answerContent = document.getElementById("answer");
 
 const pointer = {
   symbol: "|",
   index: 0,
 };
 
-let screenContent = document.getElementById("screen");
-let answerContent = document.getElementById("answer");
+// Variables I use for storage
+let storedVariable = 0;
+
+// math functions boolean
+let isPYT = false;
 
 /**
  * Inserts a value into the screen at the current pointer index and moves the pointer forward.
@@ -58,14 +61,20 @@ function emptyVariable() {
   console.log(storedVariable);
   return alert("Value cleared");
 }
+
 /**
  * Clears the screen and resets the pointer index to zero.
  * @returns {string} The updated screen display.
  */
 function clearing() {
+  // clear screen
   screen.splice(pointer.index, 1);
   pointer.index = 0;
   screen = [];
+
+  // clear answer
+  answer = "";
+  answerContent.innerHTML = answer;
 
   console.log("i = " + pointer.index);
   return displayScreen();
@@ -81,6 +90,10 @@ function deleting() {
     screen.splice(pointer.index - 1, 1);
     pointer.index--;
   }
+
+  // clear answer
+  answer = "";
+  answerContent.innerHTML = answer;
 
   console.log("i = " + pointer.index);
   return displayScreen();
@@ -145,53 +158,24 @@ function displayScreen() {
   screenContent.innerHTML = screenStore;
 }
 
-function excuteCalculation() {
+function executeCalculation() {
   screen.splice(pointer.index, 1);
 
-  let expression = screen;
+  // check if PYT is enabled
+  if (isPYT == true) {
+    executePythagoreanTheorem();
+  } else {
+    // excutes eval
+    let expression = screen;
 
-  console.log(expression);
-
-  for (let i = 0; i < expression.length; i++) {
-    if (expression[i] === "V") {
-      expression.splice(expression[i], 1);
+    for (let i = 0; i < expression.length; i++) {
+      if (expression[i] === "V") {
+        expression.splice(expression[i], 1);
+      }
     }
+
+    expression = expression.join("");
+    expression = eval(expression);
+    answerContent.innerHTML = expression;
   }
-  console.log(expression);
-
-  expression = expression.join("");
-
-  console.log(expression);
-  expression = eval(expression);
-
-  answerContent.innerHTML = expression;
 }
-
-// function mergeNumbers(array) {
-//   let mergedNumber;
-
-//   for (let i = 0; i < array.length; i++) {
-//     if (typeof array[i] === "number") {
-//       // Check for consecutive numbers
-//       while (i + 1 < array.length && typeof array[i + 1] === "number") {
-//         mergedNumber += array[i + 1]; // Add the next number
-//         i++; // Move to the next index
-//       }
-//     }
-//   }
-
-//   console.log(mergedNumber);
-// }
-
-//   let tokens = expression.split(/([\+\-\*\/])/);
-
-//   for (let i = 0; i < expression.length; i++) {
-//     for (let j = 0; j < operators.length; j++) {
-//       if (expression[i] === operators[j]) {
-//         if (operators[j] === expression[i + 1]) {
-//           mergedElement = expression[i] + expression[i + 1];
-//           expression.splice(i, 2);
-//           expression.splice(i, 0, mergedElement);
-//         }
-//       }
-//     }
