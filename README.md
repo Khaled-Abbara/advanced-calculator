@@ -1,8 +1,11 @@
 # advanced-calculator
-Written in Javascript with zero libraries
+
+## basic info about project
+An advanced scientific calculator with prebuilt function that speed up the time it takes to calculate with students.
+This is written in Javascript with zero libraries or dependencies. 
 
 
-## The languages am using
+## Technologies am using
 - HTML
 - CSS
 - Javascript
